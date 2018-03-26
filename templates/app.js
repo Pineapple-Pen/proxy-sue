@@ -1,4 +1,4 @@
 
-module.exports = (Overview) => `
-  <div id="Info">${Overview}</div>
+module.exports = (overview) => `
+  <div id="Overview">${overview}</div>
 `;

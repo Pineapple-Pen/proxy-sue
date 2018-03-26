@@ -20,16 +20,16 @@ const Scripts = require('./templates/scripts.js');
 
 // see: https://medium.com/styled-components/the-simple-guide-to-server-side-rendering-react-with-styled-components-d31c6b2b8fbf
 const renderComponents = (components, props = {}) => {
-  return Object.keys(components).map(item => {
-    let component = React.createElement(components[item], props);
+  return Object.keys(components).map(restaurants => {
+    let component = React.createElement(components[restaurants], props);
     return ReactDom.renderToString(component);
   });
 }
 
-app.get('/items/:id', function(req, res){
-  let components = renderComponents(services, {itemid: req.params.id});
+app.get('/restaurants/:id', function(req, res){
+  let components = renderComponents(services, {restaurantsid: req.params.id});
   res.end(Layout(
-    'SDC Demo',
+    'SDC',
     App(...components),
     Scripts(Object.keys(services))
   ));
