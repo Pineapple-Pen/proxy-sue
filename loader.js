@@ -7,12 +7,13 @@ const loadBundle = function(cache, item, filename) {
   setTimeout(() => {
     console.log('loading:', filename);
     cache[item] = require(filename).default;    
-  }, 20);
+  });
 };
 
 const fetchBundles = (path, services, suffix = '', require = false) => {
   Object.keys(services).forEach(item => {
     const filename = `${path}/${item}${suffix}.js`;
+    console.log('im the file name \n',filename)
     exists(filename)
       .then(() => {
         require ? loadBundle(services, item, filename) : null;

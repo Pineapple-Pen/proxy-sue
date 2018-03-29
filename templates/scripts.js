@@ -1,5 +1,5 @@
 
-module.exports = (items) => `
+module.exports = (items, id) => `
 <script src="/lib/react.development.js"></script>
 <script src="/lib/react-dom.development.js"></script>
 
@@ -10,7 +10,7 @@ ${items.map(item => {
 <script>
   ${items.map(item => {
     return `ReactDOM.hydrate(
-      React.createElement(${item}),
+      React.createElement(${item},{id:${id}}),
       document.getElementById('${item}')
     );`;
   }).join('\n')}

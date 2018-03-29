@@ -1,3 +1,6 @@
 { 
-  "Overview" : "http://localhost:3001/app"
+  "Overview" :"http://localhost:3001/bundle",
+  "Photos":"http://192.168.43.121:3002/bundle",
+  "Sidebar":"http://192.168.43.186:3003/bundle",
+  "Reservations":"http://10.154.56.153:3004/bundle"
 }
