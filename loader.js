@@ -22,7 +22,6 @@ const fetchBundles = (path, services, suffix = '', require = false) => {
         if (err.code === 'ENOENT') {
           const url = `${services[item]}${suffix}.js`;
           console.log(`Fetching: ${url}`);
-          // see: https://www.npmjs.com/package/node-fetch
           fetch(url)
             .then(res => {
               const dest = fs.createWriteStream(filename);
