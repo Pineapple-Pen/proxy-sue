@@ -26,7 +26,7 @@ const renderComponents = (components, props = {}) => {
 }
 
 app.get('/restaurants/:id', function(req, res){
-  let components = renderComponents(services, {restaurantsid: req.params.id});
+  let components = renderComponents(services, {id: req.params.id});
   res.end(Layout(
     'SDC',
     App(...components),
@@ -36,21 +36,17 @@ app.get('/restaurants/:id', function(req, res){
 
 app.get('/api/restaurants/:id/overview', (req, res) => {
   res.redirect(`http://localhost:3001/api/restaurants/${req.params.id}/overview`)
-});
 
-app.get('/api/restaurants/:id/photo', (req, res) => {
-  res.redirect(`http://10.8.65.173:3002/api/restaurants/${req.params.id}/photos`)
-});
-
-app.get('/api/restaurants/:id/sidebar', (req, res) => {
-  res.redirect(`http://10.8.65.25:3003/api/restaurants/${req.params.id}/sidebar`)
-});
-
-app.get('/api/restaurants/:id/recommendations', (req, res) => {
-  res.redirect(`http://10.8.65.181:3004/api/restaurants/${req.params.id}/recommendations`)
 });
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`)});
+  
+// app.get('/api/restaurants/:id/photo', (req, res) => {
+//   res.redirect(`http://10.8.65.173:3002/api/restaurants/${req.params.id}/photos`)
+// });
 
 
+// app.get('/api/restaurants/:id/recommendations', (req, res) => {
+//   res.redirect(`http://10.8.65.181:3004/api/restaurants/${req.params.id}/recommendations`)
+// });
